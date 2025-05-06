@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent</title>
+<link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <div class="login-form">
+
+        <h2 class="log">Login</h2>
+        <form action="#">
+
+            <div class="form-group">
+                <label for="username" class="user">Username</label>
+                <input type="text" id="username" required >
+            </div>
+            <div class="form-group">
+                <label for="password" class="user">Password</label>
+                <input type="password" id="password" required>
+
+            </div>
+            <button type="submit" class="btn">Login</button>
+
+
+
+        </form>
+    </div>
+
+
+
+
+
+
+    
+
+<script>
+  const loginForm = document.querySelector('.login-form');
+
+  document.addEventListener('mousemove', (e) => {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    loginForm.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  });
+
+  document.addEventListener('mouseleave', (e) => {
+    loginForm.style.transform = `rotateY(0deg) rotateX(0deg)`;
+    loginForm.style.transition = 'transform 0.5s ease';
+  });
+
+  document.addEventListener('mouseenter', (e) => {
+    loginForm.style.transition = 'none';
+  });
+</script>
+</body>
+</html>
